@@ -1117,7 +1117,7 @@ if (qrToggleBtn && qrSection) {
         if (g.photo) {
           const img = document.createElement("img");
 img.className = "guest-photo";
-img.src = g.photo;
+img.src = g.photo + "?v=2";
 img.alt = g.name;
 img.loading = "lazy";     // ← 🔥 enable lazy loading
 
@@ -1125,7 +1125,7 @@ img.loading = "lazy";     // ← 🔥 enable lazy loading
           // 🔍 Click to open zoom/lightbox
           img.addEventListener("click", () => {
             const caption = `${g.name} – #${cabin.number} · ${cabin.name} (${cabin.type || "Lodging"})`;
-            openLightbox(g.photo, caption);
+            openLightbox(g.photo + "?v=2", caption);
           });
 
           photoWrapperEl.appendChild(img);
@@ -1207,4 +1207,5 @@ img.loading = "lazy";     // ← 🔥 enable lazy loading
 
 </body>
 </html>
+
 
