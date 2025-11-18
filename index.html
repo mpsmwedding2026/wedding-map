@@ -764,7 +764,7 @@ max-height: 230px;
 </main>
 
 
-  <script>
+  <script>   const PHOTO_BASE = "https://mpsmwedding2026.github.io/wedding-map/";
   // All accommodations with numbers, types, and multiple guests (each can have a photo)
   const cabins = [
     {
@@ -1117,15 +1117,16 @@ if (qrToggleBtn && qrSection) {
         if (g.photo) {
           const img = document.createElement("img");
 img.className = "guest-photo";
-img.src = g.photo + "?v=2";
+img.src = PHOTO_BASE + g.photo;
 img.alt = g.name;
-img.loading = "lazy";     // ← 🔥 enable lazy loading
+img.loading = "lazy";
+   // ← 🔥 enable lazy loading
 
 
           // 🔍 Click to open zoom/lightbox
           img.addEventListener("click", () => {
             const caption = `${g.name} – #${cabin.number} · ${cabin.name} (${cabin.type || "Lodging"})`;
-            openLightbox(g.photo + "?v=2", caption);
+            openLightbox(PHOTO_BASE + g.photo, caption);
           });
 
           photoWrapperEl.appendChild(img);
@@ -1207,5 +1208,6 @@ img.loading = "lazy";     // ← 🔥 enable lazy loading
 
 </body>
 </html>
+
 
 
